@@ -47,45 +47,16 @@ function showTodo(filter) {
 showTodo("all");
 
 
-function showMenu(selectedTask) {
-    let menuDiv = selectedTask.parentElement.lastElementChild;
-    menuDiv.classList.add("show");
-    document.addEventListener("click", e => {
-        if(e.target.tagName != "I" || e.target != selectedTask) {
-            menuDiv.classList.remove("show");
-        }
-    });
-}
+function showMenu(selectedTask) {}
 
 
-function updateStatus(selectedTask) {
-    let taskName = selectedTask.parentElement.lastElementChild;
-    if(selectedTask.checked) {
-        taskName.classList.add("checked");
-        todos[selectedTask.id].status = "completed";
-    } else {
-        taskName.classList.remove("checked");
-        todos[selectedTask.id].status = "pending";
-    }
-    localStorage.setItem("todo-list", JSON.stringify(todos))
-}
+function updateStatus(selectedTask) {}
 
 
-function editTask(taskId, textName) {
-    editId = taskId;
-    isEditTask = true;
-    taskInput.value = textName;
-    taskInput.focus();
-    taskInput.classList.add("active");
-}
+function editTask(taskId, textName) {}
 
 
-function deleteTask(deleteId, filter) {
-    isEditTask = false;
-    todos.splice(deleteId, 1);
-    localStorage.setItem("todo-list", JSON.stringify(todos));
-    showTodo(filter);
-}
+function deleteTask(deleteId, filter) {}
 
 
 clearAll.addEventListener("click", () => {
